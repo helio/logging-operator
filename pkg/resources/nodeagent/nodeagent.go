@@ -105,6 +105,10 @@ func NodeAgentFluentbitDefaults(userDefined **v1beta1.NodeAgent) (*v1beta1.NodeA
 			ForwardOptions: &v1beta1.ForwardOptions{
 				RetryLimit: "False",
 			},
+
+			TLS: &v1beta1.FluentbitTLS{
+				Enabled: util.BoolPointer(false),
+			},
 		},
 	}
 	if (*userDefined).FluentbitSpec == nil {
